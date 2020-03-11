@@ -24,3 +24,9 @@ script:
 
 after_success:
   - npm run coveralls
+
+deploy:
+  provider: heroku
+  api_key: a6c6ab8d-7b79-40bb-84de-9b9565c7dd48
+  app:
+      develop: todo-app-io

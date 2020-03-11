@@ -7,6 +7,7 @@
     "start": "babel-node server/index",
     "dev": "nodemon --exec babel-node server/index.js",
     "test": "(dropdb --if-exists testcickodes && createdb testcickodes) && NODE_ENV=test mocha --require @babel/register server/**/*.test.js --timeout 15000 --exit",
+    "test/local": "(dropdb --if-exists testcickodes && createdb testcickodes) && NODE_ENV=testlocal mocha --require @babel/register server/**/*.test.js --timeout 15000 --exit",
     "show": "nyc npm run test",
     "coverage": "nyc --reporter=html --report=text npm run test",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
@@ -24,12 +25,12 @@
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "express": "^4.17.1",
+    "dotenv": "^8.2.0",
     "pg": "^7.18.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "coveralls": "^3.0.9",
-    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
