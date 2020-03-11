@@ -1,8 +1,9 @@
 import { Pool } from 'pg';
-import dotenv from 'dotenv';
 import envir from './urls';
 
-dotenv.config({ silent: process.env.NODE_ENV === 'production' });
+// eslint-disable-next-line global-require
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+
 const environment = process.env.NODE_ENV || 'development';
 const environmentsConfig = envir[environment];
 

@@ -1,8 +1,9 @@
 import express from 'express';
-import dotenv from 'dotenv';
 import createTable from './helpers/db/tables';
 
-dotenv.config({ silent: process.env.NODE_ENV === 'production' });
+// eslint-disable-next-line global-require
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+
 const app = express();
 
 const port = process.env.PORT || 5000;
