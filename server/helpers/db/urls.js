@@ -2,8 +2,12 @@
 require('dotenv').config();
 
 const envir = {
-  test: {
+  testlocal: {
     connection: `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@localhost/testcickodes`,
+  },
+
+  test: {
+    connection: 'postgres://localhost/testcickodes',
   },
 
   development: {
