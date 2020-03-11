@@ -1,5 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-require('dotenv').config({ silent: process.env.NODE_ENV === 'production' });
+import dotenv from 'dotenv';
+
+dotenv.config({ silent: process.env.NODE_ENV === 'production' });
 
 const envir = {
   testlocal: {
