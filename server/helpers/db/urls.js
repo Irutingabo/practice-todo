@@ -1,6 +1,5 @@
-import dotenv from 'dotenv';
-
-dotenv.config({ silent: process.env.NODE_ENV === 'production' });
+// eslint-disable-next-line global-require
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 const envir = {
   testlocal: {
