@@ -2,7 +2,7 @@ import express from 'express';
 import createTable from './helpers/db/tables';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-require('dotenv').config();
+require('dotenv').config({ silent: process.env.NODE_ENV === 'production' });
 
 const app = express();
 
