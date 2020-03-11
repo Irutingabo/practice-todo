@@ -1,0 +1,41 @@
+{
+  "name": "practice-todo",
+  "version": "1.0.0",
+  "description": "To-Do API is a simple backend of a “to-do application” project for business and personal work. It accepts a new creation of a task and stores it.",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node server/index",
+    "dev": "nodemon --exec babel-node server/index.js",
+    "test": "(dropdb --if-exists testcickodes && createdb testcickodes) && NODE_ENV=test mocha --require @babel/register server/**/*.test.js --timeout 15000 --exit",
+    "show": "nyc npm run test",
+    "coverage": "nyc --reporter=html --report=text npm run test",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "author": "Shama IRUTINGABO",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/register": "^7.8.6",
+    "@babel/runtime": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "express": "^4.17.1",
+    "pg": "^7.18.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.9",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "mocha": "^7.1.0",
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.0",
+    "supertest": "^4.0.2"
+  }
+}
